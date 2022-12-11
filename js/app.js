@@ -81,7 +81,7 @@ board.forEach(function(element, index){
 function updateMessage(){
   let person = ' '
   if(turn === -1) person ='player 1'
-  else {person = 'player 2'}
+  else {person = 'player 2'};
   if (winner === false && tie === false){
   messageEl.textContent = `It's ${person}'s turn`
   } else if (winner === false && tie === true){
@@ -99,7 +99,7 @@ function handleClick(evt){
     return
   }
   placePiece(sqIdx)
-  checkForTie()
+  // checkForTie()
   checkForWinner()
   switchPlayerTurn()
   render()
@@ -112,9 +112,9 @@ function placePiece(idx){
   }
 
 
-function checkForTie(){
-  if (!board.includes("null")) tie = true
-}
+// function checkForTie(){
+//   if (!board.includes("null")) tie = true
+// }
 
 //this returns false even if I win - NOT FIXED YET
 // function checkForWinner(){
