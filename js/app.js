@@ -78,24 +78,19 @@ board.forEach(function(element, index){
 } ) 
 }
 
-
-
 function updateMessage(){
   let person = ' '
-  if(turn === -1){
-    person ='player 1'
-  } else {
-    person = 'player 2'
-  }
+  if(turn === -1) person ='player 1'
+  else {person = 'player 2'}
   if (winner === false && tie === false){
   messageEl.textContent = `It's ${person}'s turn`
   } else if (winner === false && tie === true){
-    `It's a tie`
+    messageEl.textContent = `It's a tie`
   } else {
-  messageEl.textContent `${person} Wins` 
+  messageEl.textContent = `${person} Wins` 
 }
 }
-updateMessage()
+
 
 function handleClick(evt){
   const sqIdx = evt.target.id.at(-1)
@@ -122,24 +117,29 @@ function checkForTie(){
 }
 
 //this returns false even if I win - NOT FIXED YET
-function checkForWinner(){
-  winningCombos.forEach(function(combo){
-    let aWinner = 0
-    combo.forEach(function(element){
-      aWinner += board[element]
-    })
-    console.log('check aWinner' , aWinner);
-    if (Math.abs(aWinner) ===3){
-      winner === true
-      return winner
-    } else {
-      winner === false
-    }
-    console.log('check winner' , winner)
-  })
-}
 // function checkForWinner(){
+//   winningCombos.forEach(function(combo){
+//     let aWinner = 0
+//     combo.forEach(function(element){
+//       aWinner += board[element]
+//     })
+//     console.log('check aWinner' , aWinner);
+//     if (Math.abs(aWinner) ===3){
+//       winner === true
+//       return winner
+//     } else {
+//       winner === false
+//     }
+//     console.log('check winner' , winner)
+//   })
+// }
+// // function checkForWinner(){
 // for (let i = 0; i < winningCombos.length + 1; i++){
+  function checkForWinner(){
+    for (let i = 0; i < winningCombos.length; i++){
+  if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]) === 3){
+    winner = true
+  }}}
 //   if(Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]) === 3)
 // {
 //   winner === true
