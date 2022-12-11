@@ -30,11 +30,13 @@ const messageEl = document.getElementById("message")
 //console.log(messageEl)
 const boardEl = document.querySelector(".board")
 //console.log(boardEl)
-
+const resetBtnEl = document.getElementById('reset')
 /*----------------------------- Event Listeners -----------------------------*/
 boardEl.addEventListener('click', handleClick) 
   console.log()
 //console.log(evt)
+
+resetBtnEl.addEventListener("click", init)
 
 
 
@@ -80,8 +82,8 @@ board.forEach(function(element, index){
 
 function updateMessage(){
   let person = ' '
-  if(turn === -1) person ='player 1'
-  else {person = 'player 2'};
+  if(turn === -1) person ='Player 2'
+  else {person = 'Player 1'};
   if (winner === false && tie === false){
   messageEl.textContent = `It's ${person}'s turn`
   } else if (winner === false && tie === true){
