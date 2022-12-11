@@ -91,7 +91,6 @@ function updateMessage(){
 }
 }
 
-
 function handleClick(evt){
   const sqIdx = evt.target.id.at(-1)
   //console.log(sqIdx) 
@@ -99,7 +98,7 @@ function handleClick(evt){
     return
   }
   placePiece(sqIdx)
-  // checkForTie()
+  checkForTie()
   checkForWinner()
   switchPlayerTurn()
   render()
@@ -107,68 +106,17 @@ function handleClick(evt){
 
 function placePiece(idx){
   board[idx] = turn
-  //console.log(board[idx])
-  //console.log(turn)
   }
 
+function checkForTie(){
+  if (!board.includes(null)) tie = true
+}
 
-// function checkForTie(){
-//   if (!board.includes("null")) tie = true
-// }
-
-//this returns false even if I win - NOT FIXED YET
-// function checkForWinner(){
-//   winningCombos.forEach(function(combo){
-//     let aWinner = 0
-//     combo.forEach(function(element){
-//       aWinner += board[element]
-//     })
-//     console.log('check aWinner' , aWinner);
-//     if (Math.abs(aWinner) ===3){
-//       winner === true
-//       return winner
-//     } else {
-//       winner === false
-//     }
-//     console.log('check winner' , winner)
-//   })
-// }
-// // function checkForWinner(){
-// for (let i = 0; i < winningCombos.length + 1; i++){
   function checkForWinner(){
     for (let i = 0; i < winningCombos.length; i++){
   if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]) === 3){
     winner = true
   }}}
-//   if(Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]) === 3)
-// {
-//   winner === true
-// } else {
-//   winner === false }
-// } 
-// }
-
-// console.log('winning' , winner)
-
-
-
-// const winningCombos = [
-//   [0, 1, 2],
-//   [3, 4, 5], 
-//   [6, 7, 8], 
-//   [1, 4, 7],
-//   [2, 5, 8],
-//   [0, 3, 6],
-//   [0, 4, 8],
-//   [2, 4, 6],
-// ]
-
-
-
-
-
-
-
 
 
 function switchPlayerTurn(){
@@ -179,5 +127,3 @@ function switchPlayerTurn(){
   }
   console.log(turn)
 }
-//switchPlayerTurn()
-//console.log(turn)
