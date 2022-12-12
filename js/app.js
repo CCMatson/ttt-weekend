@@ -42,6 +42,8 @@ resetBtnEl.addEventListener("click", init)
 
 /*-------------------------------- Functions --------------------------------*/
 //stores the game state
+init()
+
 function init(){
   board = [null, null, null, null, null, null, null, null, null]
   turn = 1 
@@ -51,15 +53,10 @@ function init(){
 render()
 }
 
-//calls init
-init()
-
-// console.log(board[0, 1, 2])
 
 function render(){
   updateBoard()
   updateMessage()
-//console.log('sanity check2')
 }
 
 // displays game state of each x , o , or null 
@@ -69,10 +66,12 @@ board.forEach(function(element, index){
   if (element === 1){
    // console.log(element)
     squareEls[index].innerText = "X"
+    squareEls[index].style.color = "#023E8A"
     //console.log(squareEls[index])
   } else if (element === -1){
    // console.log(index)
     squareEls[index].innerText = "O"
+    squareEls[index].style.color = 'black'
     //console.log(squareEls)
     //console.log(squareEls[index])
   } else if (element === null){
