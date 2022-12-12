@@ -47,6 +47,7 @@ function init(){
   turn = 1 
   winner = false
   tie = false
+  messageEl.classList.remove('animate_animated' , 'animate__hinge')
 render()
 }
 
@@ -85,11 +86,15 @@ function updateMessage(){
   if(turn === -1) person ='Player 2'
   else {person = 'Player 1'};
   if (winner === false && tie === false){
-  messageEl.textContent = `It's ${person}'s turn`
+    messageEl.textContent = `It's ${person}'s turn`
+    messageEl.classList.add('animate_animated' , 'animate_tada')
   } else if (winner === false && tie === true){
     messageEl.textContent = `It's a tie`
+    messageEl.classList.add('animate_animated' , 'animate__hinge')
+    
   } else {
   messageEl.textContent = `${person} Wins` 
+  confetti.start(1200)
 }
 }
 
@@ -127,5 +132,5 @@ function switchPlayerTurn(){
   } else {
     turn = turn * -1
   }
-  console.log(turn)
 }
+

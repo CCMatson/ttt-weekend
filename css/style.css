@@ -1,12 +1,12 @@
 body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	margin: 0;
   background-color: #CAF0F8;
-  /* Use a system font, if none are available use an available sans-sarif   font */
-
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,8 +27,6 @@ div {
   font-size: 8vmin;
   text-align: center;
   vertical-align: middle;
-  /* width: 33%;
-  height: 33%; */
 }
 
 
@@ -48,6 +46,7 @@ button {
 button:hover {
   border: 1px solid rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  background-color: #ADE8F4;
 }
 
 /* .btnContainer {
@@ -61,13 +60,13 @@ h1 {
   font-size: 60px;
   color: #03045E;
 }
+
 h2 {
   font-size: 30px;
   color: #023E8A;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: 'Cabin', sans-serif;
 }
 
