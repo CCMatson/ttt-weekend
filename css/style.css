@@ -7,8 +7,6 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -29,6 +27,11 @@ div {
   vertical-align: middle;
 }
 
+.sqr {
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
 button {
   padding: 10px;
